@@ -1,0 +1,37 @@
+//Author: Rebecca Cairns
+//Date: 4/10/19
+//unit 6 hw inplace_merging
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+void print(const int & value){
+	cout << value << " ";
+}
+
+int main(){
+	vector<int> v1 = { 5, 6, 7, 8,  9, 0, 1, 2, 3, 4 };
+	unsigned start_value;
+	cin >> start_value;
+	unsigned stop_value;
+	cin >> stop_value;
+	if (start_value>stop_value)
+	{
+		swap(start_value, stop_value);
+	}
+	if (start_value>9 || stop_value>9)
+	{
+		cout << "Stop value and start value must be less than or equal to 9" << endl;
+		return 1;
+	}
+	sort(v1.begin() + ___________, v1.begin() + __________);
+	//inplace_merge(v1.begin() + _, v1.begin() + _, v1.begin() + __________);
+  //The inplace merge does not do anything
+  
+	for_each(v1.begin() + start_value, v1.begin() + stop_value, print); cout << endl;
+
+	return 0;
+}
