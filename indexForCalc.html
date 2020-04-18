@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+<html lang="en">
+  <head>
+    <script>
+      //alert("hi,  I just wanted to try out ranges because I never used them" +
+      //"and felt like I could get away with it here.");
+
+      function updatecost(val) {
+          document.getElementById('printcarval').innerHTML = " " + val;
+      }
+      function updatedep(val) {
+          document.getElementById('printcardep').innerHTML = " " + val;
+      }
+      function updateyear(val) {
+          document.getElementById('printcaryear').innerHTML = " " + val;
+      }
+    </script>
+    <meta charset= utf-8>
+    <style>
+      .formSide{
+        border: 2px solid blue;
+        width: 30vw;
+        text-align: right;
+        padding: 10px;
+        position: fixed;
+        top: 80px;
+        left: 18vw;
+        height: 90px;
+      }
+      h1{
+        text-align: center;
+      }
+      .display{
+        border: 2px solid blue;
+        position: fixed;
+        top: 80px;
+        right: 25vw;
+        width: 20vw;
+        height: 110px;
+        padding-left: 12px;
+      }
+      #carValueNow{
+        border: 10px solid yellow;
+        position: fixed;
+        top: 240px;
+        left: 18vw;
+        width: 490px;
+        height: 200px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Car Value Estimator</h1>
+    <div class="formSide">
+      <form action="calc.php" method="POST">
+        <label for="carval">Value of car:</label>
+        <input type="range" name="carval" min="10000" max="60000" step="1000" onchange="updatecost(this.value);"><br/>
+        <label for="cardep">Yearly depreciation:</label>
+        <input type="range" name="cardep" min="200" max="1000" step="100" onchange="updatedep(this.value);"><br/>
+        <label for="caryear">Car year:</label>
+        <input type="range" name="caryear" min="2000" max="2020" onchange="updateyear(this.value);"><br/>
+
+        <input type="submit">
+      </form>
+      </div>
+      <div class="display">
+        <p>Value of car:<span id="printcarval"></span></p>
+        <p>Yearly depreciation:<span id="printcardep"></span></p>
+        <p>Car year:<span id="printcaryear"></span></p>
+      </div>
+      <div id="carValueNow">
+
+      </div>
+  </body>
+</html>
