@@ -1,6 +1,3 @@
-//Author: Rebecca Cairns
-//Date: 4/10/19
-//unit 6 hw inplace_merging
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -28,8 +25,7 @@ int main(){
 		return 1;
 	}
 	sort(v1.begin() + ___________, v1.begin() + __________);
-	//inplace_merge(v1.begin() + _, v1.begin() + _, v1.begin() + __________);
-  //The inplace merge does not do anything
+	
   
 	for_each(v1.begin() + start_value, v1.begin() + stop_value, print); cout << endl;
 
